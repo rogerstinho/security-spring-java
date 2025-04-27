@@ -1,0 +1,14 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: springboot-openid-client-app
+            client-secret: 0e2f3b4c-5d6e-7a8b-9c0d-e1f2g3h4i5j6
+            scope: openid, profile, email
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/{registrationId}
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8180/auth/realms/keycloak_springboot
